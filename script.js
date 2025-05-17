@@ -2,12 +2,6 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("gloveCanvas") });
 const loader = new THREE.GLTFLoader();
-loader.load('assets/gloveModel.glb', function (glove) {
-    console.log("Model loaded successfully!");
-    scene.add(glove.scene);
-}, undefined, function (error) {
-    console.error("Error loading the model:", error);
-});
 
 
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
@@ -19,9 +13,11 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // Load the 3D glove model
-const loader = new THREE.GLTFLoader();
-loader.load('https://adamgrambergs.github.io/glove_model_3D/gloveModel.glb', function (glove) {
+loader.load('https://adamgrambergs.github.io/glove_model_3D/gloveModel.glb', function (glove) {    
+    console.log("Model loaded successfully!");
     scene.add(glove.scene);
+}, undefined, function (error) {
+    console.error("Error loading the model:", error);
 });
 
 // Handle user color changes
