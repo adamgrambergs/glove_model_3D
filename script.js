@@ -7,8 +7,7 @@ document.body.appendChild(renderer.domElement);
 
 // Load the 3D glove model
 const loader = new THREE.GLTFLoader();
-loader.load('gloveModel.glb', function (glove) {
-    window.gloveModel = glove;
+loader.load('https://adamgrambergs.github.io/glove_model_3D/gloveModel.glb', function (glove) {
     scene.add(glove.scene);
 });
 
