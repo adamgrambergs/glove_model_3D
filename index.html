@@ -1,26 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Glove Designer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Baseball/Softball Glove Designer</title>
+    
+    <!-- Load Model-Viewer -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="script.js"></script>
-    <script src="colorPicker.js"></script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        model-viewer {
+            width: 800px;
+            height: 600px;
+            margin: auto;
+            display: block;
+        }
+        #controls {
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        input[type="color"] {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-<model-viewer 
-    src="gloveModel.glb" 
-    alt="Baseball Glove Model"
-    auto-rotate 
-    camera-controls 
-    ar 
-    shadow-intensity="1"
-    style="width: 800px; height: 600px;"
-    scale="5">
-</model-viewer>
+    <h1>Customize Your Baseball/Softball Glove</h1>
+
+    <!-- Model Viewer for 3D Glove -->
+    <model-viewer 
+        src="assets/gloveModel.glb" 
+        alt="Baseball Glove Model"
+        auto-rotate 
+        camera-controls 
+        shadow-intensity="1"
+        style="width: 800px; height: 600px;">
+    </model-viewer>
+    
+    <!-- Color Customization Controls -->
+    <div id="controls">
         <label>Lacing Color:</label> <input type="color" id="lacingColor">
         <label>Pocket Color:</label> <input type="color" id="pocketColor">
         <label>Leather Color:</label> <input type="color" id="leatherColor">
     </div>
+
+    <p>Modify the colors and create your perfect glove!</p>
 </body>
 </html>
+
