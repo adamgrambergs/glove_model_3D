@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Baseball/Softball Glove Designer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/colorPicker.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        canvas {
+            display: block;
+            margin: auto;
+            width: 80%;
+            height: 500px;
+            border: 2px solid black;
+        }
+        #controls {
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        input[type="color"] {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Customize Your Baseball/Softball Glove</h1>
+    <canvas id="gloveCanvas"></canvas>
+    
+    <div id="controls">
+        <label>Lacing Color:</label> <input type="color" id="lacingColor">
+        <label>Pocket Color:</label> <input type="color" id="pocketColor">
+        <label>Leather Color:</label> <input type="color" id="leatherColor">
+    </div>
+
+    <p>Modify the colors and create your perfect glove!</p>
+</body>
+</html>
