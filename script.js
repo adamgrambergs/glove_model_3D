@@ -28,13 +28,6 @@ document.getElementById("lacingColor").addEventListener("input", function () {
         }
     });
 });
-const loader = new THREE.GLTFLoader();
-loader.load('assets/gloveModel.glb', function (glove) {
-    console.log("Model loaded successfully!");
-    scene.add(glove.scene);
-}, undefined, function (error) {
-    console.error("Error loading the model:", error);
-});
 
 function animate() {
     requestAnimationFrame(animate);
