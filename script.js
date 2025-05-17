@@ -1,8 +1,14 @@
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("gloveCanvas") });
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft light
-scene.add(ambientLight);
+const loader = new THREE.GLTFLoader();
+loader.load('assets/gloveModel.glb', function (glove) {
+    console.log("Model loaded successfully!");
+    scene.add(glove.scene);
+}, undefined, function (error) {
+    console.error("Error loading the model:", error);
+});
+
 
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
 directionalLight.position.set(5, 5, 5);
