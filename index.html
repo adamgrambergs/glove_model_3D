@@ -8,8 +8,13 @@
     <script src="colorPicker.js"></script>
 </head>
 <body>
-    <canvas id="gloveCanvas"></canvas>
-    <div id="controls">
+<model-viewer 
+    src="gloveModel.glb" 
+    alt="Baseball Glove Model"
+    auto-rotate 
+    camera-controls 
+    ar 
+    shadow-intensity="1">
         <label>Lacing Color:</label> <input type="color" id="lacingColor">
         <label>Pocket Color:</label> <input type="color" id="pocketColor">
         <label>Leather Color:</label> <input type="color" id="leatherColor">
